@@ -2,8 +2,8 @@
 
 This is the [CSE-20289-SP19] reading and homework assignments repository for:
 
-* **Name**:  Dommer McDomerson
-* **NetID**: dmcdomers
+* **Name**:  Domer McDomerson
+* **NetID**: dmcdomer
 
 ## Readings
 
