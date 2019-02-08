@@ -48,7 +48,7 @@ done
 
 ##### FILTER PIPELINE #####
 
-if [ "${BOOL}" == 'W' ];
+if [ "${BOOL}" = 'W' ];
 	then
 	sed -e "s|${DELIM}.*$||g" | sed -r 's|\s*$||'
 	else
