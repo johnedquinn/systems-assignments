@@ -1,0 +1,46 @@
+{
+  "q1": [
+    "master",
+    "rebase",
+    "checkout",
+    "branch"
+  ],
+  "q2": [
+    "add",
+    "commit",
+    "push",
+    "log"
+  ],
+  "q3": [
+    "stat",
+    "ln",
+    "chmod",
+    "find"
+  ],
+  "q4": [
+    "^z",
+    "^c",
+    "kill 1022",
+    "killall -9 bill"
+  ],
+  "q5": [
+    "du_null",
+    "du_stdout",
+    "sort_stdout"
+  ],
+  "q6": [
+    "nmap",
+    "curl http://xavier.h4x0r.space:9213",
+    "ping xavier.h4x0r.space"
+  ],
+  "q7": [
+    "for file in \"$@\"; do",
+    "test -r \"$file\" && echo file is readable!"
+  ],
+  "q8": [
+    "test -r \"$1\"",
+    "while [ $# -gt 0 ]; do",
+    "is_readable $1 && echo \"$1 is readable!\"",
+    "shift"
+  ]
+}
