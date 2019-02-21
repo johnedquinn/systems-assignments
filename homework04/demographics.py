@@ -56,8 +56,9 @@ def dump_demo_separator(years, char='='):
 def dump_demo_years(years):
 	''' Dump demographics years information '''
 	print('\t', end='')
-	for year in years:
-		print('{:<4}\t'.format(year), end='')
+	modifiedYrs = '\t'.join(years)
+	#for year in years:
+	print('{:<4}'.format(modifiedYrs), end='')
 	print('')
 	dump_demo_separator(len(years), char='=')
 	pass
