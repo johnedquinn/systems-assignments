@@ -1,0 +1,19 @@
+{
+  "q1": [
+    "module",
+    "argv"
+  ],
+  "q2": [
+    "evars",
+    "nofmt",
+    "dict",
+    "oldfmt"
+  ],
+  "q3": [
+    "startswith",
+    "stdin",
+    "len",
+    "options",
+    "append"
+  ]
+}
