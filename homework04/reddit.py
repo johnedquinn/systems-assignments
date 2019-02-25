@@ -25,7 +25,7 @@ def usage(status=0):
 
 def load_reddit_data(url=URL):
 	''' Load reddit data from specified URL into dictionary '''
-	headers = { 'user-agent' : 'reddit-{}'.format(os.environ['USER']) }
+	headers = { 'user-agent' : 'reddit-{}'.format(os.environ.get('USER', 'cse-20289-sp19')) }
 	response = requests.get(URL, headers=headers)
 	data = response.json()
 	children = data['data']['children']
