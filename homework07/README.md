@@ -43,13 +43,19 @@
 1. Based on your experiments, what is the overall trend in terms of **time**
    and **space** as the number of items increases for the different **load
    factors**?
+	- As the load factor increases, the time increases and the space decreases.
 
     Are the results surprising to you? Explain why or why not.
+	- The results are not surprising to me because with a higher load factor, the buckets will contain more Entries, and therefore traversing through the linked lists should take longer. For space, it also is not susprising because with a higher load factor you don't need to create a larger array of buckets as often. Therefore, using the same number of Entries with  smaller number of buckets the size cuts down.
     
 2. There is no such thing as a **perfect data structure**. Compare this **hash
    table** to the **AVL tree** discussed in your data structures class. What
    are the advantages and disadvantages of both? If you had to use one as the
    underlying data structure for a **map**, which one would you choose and why?
+	- A hash table's advantages include: quick search time with hashing. A hash table's disadvantages include: collisions may occur (unless you use separate chaining)
+	- An AVL tree's advantages include: good search time because it is a balanced tree. An AVL tree's disadvantages include: insertion / deletion because the tree needs to reformat itself.
+
+	- As for which one I would choose, I'd say IT DEPENDS. If I wanted to search things in constant time I would use a hash table. If I wanted to view entries in order I would use an AVL tree. Though, I'd say hash tables are better in many aspects, and I would like to lean on hash tables.
 
     **Note**: If you are not currently in the data structures class, you can
     simply compare your **hash table** to any other **binary search tree** you
