@@ -1,0 +1,43 @@
+{
+  "q1": [
+    "file",
+    "read",
+    "write",
+    "inode",
+    "directory"
+  ],
+  "q2": [
+    "open",
+    "read",
+    "write",
+    "lseek",
+    "fsync"
+  ],
+  "q3": [
+    "mkdir",
+    "rmdir",
+    "stat",
+    "chmod",
+    "kill",
+    "chdir",
+    "rename",
+    "unlink",
+    "link",
+    "open"
+  ],
+  "q4": [
+    "opendir",
+    "strerror",
+    "readdir",
+    "readdir",
+    "e->d_name",
+    "e->d_name",
+    "e->d_type",
+    "stat",
+    "e->d_name",
+    "strerror",
+    "e->d_name",
+    "s.st_size",
+    "closedir"
+  ]
+}
