@@ -1,11 +1,6 @@
-Homework 08
-===========
+# Homework 08
 
 ## Strace Output 
-
-### `duplicate`
-
-### `dd`
 
 ### `search`
 
@@ -14,8 +9,8 @@ Homework 08
 ## Questions
 
 1. Describe the differences you see between the number and type of system calls
-   used by your utilities as compared to the standard Unix programs.
+   used by your utility as compared to the standard Unix program.
 
-2. Did you notice anything surprising about the trace of your utilities or the
-   trace of the standard Unix programs? Which implementations are faster or
-   more efficient?  Explain.
+2. Did you notice anything surprising about the trace of your utility or the
+   trace of the standard Unix program? Which implementations are faster or more
+   efficient?  Explain.
