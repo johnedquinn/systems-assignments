@@ -1,0 +1,17 @@
+{
+  "q1": "4",
+  "q2": "5",
+  "q3": "3",
+  "q4": "5",
+  "q5": [
+    "fprintf",
+    "exit",
+    "fgets",
+    "fputs",
+    "fopen",
+    "strerror",
+    "fclose",
+    "strlen",
+    "strcmp"
+  ]
+}
