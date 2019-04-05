@@ -11,7 +11,7 @@
  * @param   progname        Name of program.
  * @param   status          Exit status.
  */
-void        options_usage(const char *progname, int status) {
+void        options_usage(const char * progname, int status) {
     fprintf(stderr, "Usage: %s PATH [OPTIONS]\n", progname);
     fprintf(stderr, "\nOptions:\n");
     fprintf(stderr, "    -help           Display this help message\n\n");
@@ -37,8 +37,57 @@ void        options_usage(const char *progname, int status) {
  * @param   options         Pointer to Options structure.
  * @return  Whether or not parsing the command-line options was successful.
  */
-bool        options_parse(int argc, char **argv, char **root, Options *options) {
-    return false;
+bool options_parse(int argc, char ** argv, char ** root, Options * options) {
+
+    // Initialize
+    const char * PROGRAM_NAME = argv[0];
+    int argind = 1;
+    
+    // Set root
+    if(argc > argind && argv[argind][0] != '-') *root = argv[argind++];
+    else *root = ".";
+
+    // If no arguments, return true
+    if (argc == argind) return true;
+
+    /* Parse Command Line Arguments */
+    while ( (argind < argc) && (strlen(argv[argind]) > 1) && (argv[argind][0] == '-') ) {
+        char * arg = argv[argind++];
+        if (streq(arg, "-help")) {
+            options_usage(PROGRAM_NAME, 0);
+        } else if (streq(arg, "-executable")) {
+            options->access |= X_OK;
+        } else if (streq(arg, "-readable")) {
+            options->access |= R_OK;
+        } else if (streq(arg, "-writable")) {
+            options->access |= W_OK;
+        } else if (streq(arg, "-type")) {
+            arg = argv[argind++];
+            if (streq(arg, "f"))
+                options->type = S_IFREG;
+            else if (streq(arg, "d"))
+                options->type = S_IFDIR;
+        } else if (streq(arg, "-empty")) {
+            options->empty = true;
+        } else if (streq(arg, "-name")) {
+            options->name = argv[argind++];
+        } else if (streq(arg, "-path")) {
+            options->path = argv[argind++];
+        } else if (streq(arg, "-perm")) {
+            options->perm = strtol(argv[argind++], NULL, 8);
+        } else if (streq(arg, "-newer")) {
+            options->newer = get_mtime(argv[argind++]);
+        } else if (streq(arg, "-uid")) {
+            options->uid = atoi(argv[argind++]);
+        } else if (streq(arg, "-gid")) {
+            options->gid = atoi(argv[argind++]);
+        } else {
+            options_usage(PROGRAM_NAME, 1);
+        }
+    }
+  
+    return true;
+
 }
 
 /* vim: set sts=4 sw=4 ts=8 expandtab ft=c: */
