@@ -1,10 +1,12 @@
-CC=		gcc
-CFLAGS=		-g -Wall -Werror -std=gnu99 -Iinclude
-LD=		gcc
-LDFLAGS=	-Llib
-TARGETS=	bin/search
+CC = gcc
+CFLAGS = -g -Wall -Werror -std=gnu99 -Iinclude
+LD = gcc
+LDFLAGS = -Llib
+TARGETS = bin/search
 
 all:		$(TARGETS)
+
+########## MAKE TEST ##########
 
 test:		
 	@$(MAKE) -sk test-all
@@ -16,10 +18,19 @@ test-search:	bin/search
 	@chmod +x bin/test_search.sh
 	@./bin/test_search.sh
 
+########## MAKE CLEAN ##########
+
 clean:
 	@echo Cleaning...
 	@rm -f $(TARGETS) src/*.o
 
+########## MAKE FILES ##########
+
+%.o: %.c include/search.h
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+bin/search: src/filter.o src/main.o src/options.o src/utilities.o src/walk.o
+	$(LD) $(LDFLAGS) -o $@ $^
+
 .SUFFIXES:
 
-# TODO: Rules for bin/search and intermediate object files
