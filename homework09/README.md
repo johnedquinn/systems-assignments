@@ -1,5 +1,4 @@
-Homework 09
-===========
+# Homework 09
 
 1. As discussed in class, working with **system calls** can be tricky because
    unlike most normal functions, they can fail.  For each of the following
@@ -21,7 +20,7 @@ Homework 09
 2. As described in the project write-up, the **parent** is doing most of the
    work in `timeit` since it `forks`, `times`, and `waits` for the **child**
    (and possibly kills it), while the child simply calls `exec`.  To distribute
-   the work more evenly, **Bill** proposes the following change:
+   the work more evenly, **Logan** proposes the following change:
 
     > Have the **child** set an `alarm` that goes off after the specified
     > `timeout`.  In the signal handler for the `alarm`, simply call `exit`, to
