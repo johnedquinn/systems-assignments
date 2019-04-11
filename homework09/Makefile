@@ -6,7 +6,7 @@ AR=		ar
 ARFLAGS=	rcs
 TARGETS=	moveit timeit
 
-all:		$(TARGETS)
+all: $(TARGETS)
 
 test:
 	@$(MAKE) -sk test-all
@@ -29,4 +29,12 @@ clean:
 
 .SUFFIXES:
 
-# TODO: Rules for moveit, timeit
+%.o: %.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
+moveit: moveit.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+timeit: timeit.o
+	$(CC) $(CFLAGS) -o $@ $^
+
